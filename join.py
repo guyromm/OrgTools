@@ -3,7 +3,11 @@ import sys
 
 #from https://github.com/guyromm/ScratchDocs/blob/journal/docs.py
 def get_table_contents(fn):
-    fp = open(fn,'r') ; gothead=False
+    if type(fn)==str:
+        fp = open(fn,'r') ; 
+    else:
+        fp = fn
+    gothead=False
     def parseline(ln):
         return [f.strip() for f in ln.split('|') if f.strip()!='']
     rt=[]
