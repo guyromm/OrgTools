@@ -79,5 +79,8 @@ def print_table(headers,data):
             
 
 if __name__=='__main__':
-    h,d=join(sys.argv[1],sys.argv[2])
+    h,d=join(sys.argv[1],
+             sys.argv[2],
+             outer = ('outer' in sys.argv and True or False), 
+             cartesian = ('cartesian' in sys.argv and True or False))
     print_table(h,d)
